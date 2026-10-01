@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Locana | Tampa Bay, the way locals know it</title>
+  <meta name="description" content="A map-first way to discover Tampa Bay and plan with friends.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <a href="#top" class="brand">Locana</a>
+  <div class="nav-links">
+    <a href="#discover">Discover</a>
+    <a href="#circles">Circles</a>
+    <a href="#why">Why Locana</a>
+    <span class="saved" id="savedPill" aria-live="polite">0 saved</span>
+    <a href="#join" class="btn btn-small">Join</a>
+  </div>
+</nav>
+
+<main id="top">
+  <section class="hero">
+    <h1>Tampa Bay, the way locals know it.</h1>
+    <p class="lead">Spots picked by people who actually go there. Save them, share them, plan the night.</p>
+    <a href="#join" class="btn">Become a founding contributor</a>
+
+    <div class="map" id="map" aria-label="Sample map of Tampa Bay">
+      <svg viewBox="0 0 600 420" preserveAspectRatio="none" aria-hidden="true">
+        <rect width="600" height="420" fill="#F6F0CF"/>
+        <path d="M600 0 V420 H250 C300 360 270 320 340 290 C420 255 380 190 450 150 C500 120 470 60 520 0Z" fill="#BFEBDD"/>
+        <path d="M0 120 C120 100 200 160 320 130" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
+        <path d="M110 0 C130 140 90 260 150 420" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
+        <path d="M0 300 C100 280 180 330 260 300" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <ellipse cx="190" cy="230" rx="56" ry="36" fill="#CFEFD9"/>
+        <ellipse cx="60" cy="60" rx="46" ry="28" fill="#CFEFD9"/>
+      </svg>
+      <button class="pin" style="--x:24%;--y:34%;--c:#E77728;--i:0" data-i="0" aria-label="Bayshore Boulevard"></button>
+      <button class="pin" style="--x:46%;--y:20%;--c:#D0A5C0;--i:1" data-i="1" aria-label="Ybor City"></button>
+      <button class="pin" style="--x:30%;--y:74%;--c:#17B890;--i:2" data-i="2" aria-label="Fort De Soto"></button>
+      <button class="pin" style="--x:58%;--y:48%;--c:#FADF63;--i:3" data-i="3" aria-label="Tampa Riverwalk"></button>
+      <div class="note" id="note" aria-live="polite">
+        <strong id="noteTitle"></strong>
+        <p id="noteText"></p>
+        <span id="noteBy"></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="discover">
+    <h2 class="reveal">What are you in the mood for?</h2>
+    <div class="chips reveal" id="chips" role="tablist">
+      <button class="chip on" data-v="all">Everything</button>
+      <button class="chip" data-v="sunset">Golden hour</button>
+      <button class="chip" data-v="food">Cheap eats</button>
+      <button class="chip" data-v="night">Late night</button>
+      <button class="chip" data-v="outside">Outside</button>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section class="section circles" id="circles">
+    <h2 class="reveal">Friday night? Your Circle decides.</h2>
+    <p class="sub reveal">Add a few spots. Everyone taps their pick. No more group chat limbo.</p>
+    <div class="vote reveal" id="vote"></div>
+    <p class="winner" id="winner" aria-live="polite">Tap an option to cast your vote.</p>
+  </section>
+
+  <section class="why" id="why">
+    <p class="scrub" id="scrub">No algorithm decides where you go. Locals add the spots. You heart the ones you love. That is the whole ranking.</p>
+  </section>
+
+  <section class="section join" id="join">
+    <h2 class="reveal">Be one of Tampa Bay's first contributors.</h2>
+    <p class="sub reveal">Add the places you love. Help shape Locana before it opens.</p>
+    <div class="signup reveal">
+      <input type="email" id="email" placeholder="you@email.com" aria-label="Email address">
+      <button class="btn" id="joinBtn">Join the waitlist</button>
+    </div>
+    <p class="thanks" id="thanks" aria-live="polite"></p>
+  </section>
+</main>
+
+<footer>
+  <span>Locana</span>
+  <span>Made in Tampa, for everywhere you call home. <span id="yr"></span></span>
+</footer>
+
+<div class="tern" id="tern" aria-hidden="true">
+  <svg viewBox="0 0 64 40"><path class="wing" d="M2 20C14 6 26 10 32 22C38 10 50 6 62 20C50 18 40 24 32 34C24 24 14 18 2 20Z" fill="#454372"/><circle cx="32" cy="20" r="3.2" fill="#E77728"/></svg>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
